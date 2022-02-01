@@ -44,10 +44,33 @@ async def on_message(message):
         'In the beginning the Universe was created. This has made a lot of people very angry and been widely regarded as a bad move.',
         'A common mistake that people make when trying to design something completely foolproof is to underestimate the ingenuity of complete fools.',
     ]
+	    
+    planes = [
+	'Alara',
+	'Amonkhet',
+	'Dominaria',
+	'Eldraine',
+	'Ikoria',
+	'Innistrad',
+	'Ixalan',
+	'Kaladesh',
+	'Kaldheim',
+	'Kamigawa',
+	'Llorwyn',
+	'New Phyrexia',
+	'Rath',
+	'Ravnica',
+	'Strixhaven',
+	'Tarkir',
+	'Theros',
+	'Zendikar',
 
-    if message.content == 'towel!':
-        #response = random.choice(brooklyn_99_quotes)
-        response = random.choice(hitchhiker_quotes)
+    ]
+
+    if message.content == 'Planeswalk!':
+       	#response = random.choice(brooklyn_99_quotes)
+        #response = random.choice(hitchhiker_quotes)
+        response = "Congratulations! You are now planeswalking to " + random.choice(planes) + "!"
         await message.channel.send(response)
-
+ 
 client.run(TOKEN)
