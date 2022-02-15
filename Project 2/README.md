@@ -37,5 +37,8 @@ with minimal functionality and talking.
   To personalize this AMI, I decided to change my username with 
 			  
 > sudo hostnamectl set-hostname NEW_HOSTNAME
-And here is my new username
+
+And here is my new username!
+
+
 ![My renaming success](assets/images/renaming.JPG)
