@@ -17,25 +17,25 @@ Building an Amazon Image given tools:
 			
 			- The instance type was a t2.micro, which was relatively cheap and just the right size for a dummy test AMI 
 		
-			![Here is what the instance should look like after construction in AWS from the Dashboard](/assets/images/InstanceDetails.JPG)
+			![Here is what the instance should look like after construction in AWS from the Dashboard](assets/images/InstanceDetails.JPG)
 						
 			- I also needed a subnet, a security rule, an internet gateway, and a route table. All of these were basically name and forget,
 			  EXCEPT the security group. There, it was imperative to add a whitelist for all inbound traffic so not everyone
 			  could say hello to my machine. My inbound rules added were for My home IP, the WSU, general IP block, and the IP of the machine itself.
 			  
-			  ![Here is the subnet](/assets/images/SubnetDetails.JPG)
+			  ![Here is the subnet](assets/images/SubnetDetails.JPG)
 			  
-			  ![My security group inbound rules](/assets/images/SecurityGroupRules.JPG)
+			  ![My security group inbound rules](assets/images/SecurityGroupRules.JPG)
 			  
-			  ![Here is the existence of the route table](/assets/images/RouteTableExistence.JPG)
+			  ![Here is the existence of the route table](assets/images/RouteTableExistence.JPG)
 			  
-			  ![Here is the existence of the internet gateway](/assets/images/GatewayExistence.JPG)
+			  ![Here is the existence of the internet gateway](assets/images/GatewayExistence.JPG)
 			  
 			  After all of this construction, it's time to log in!
-			  ![My successful login!](/assets/images/LoginSuccess.JPG)
+			  ![My successful login!](assets/images/LoginSuccess.JPG)
 			  
 			  To personalize this AMI, I decided to change my username with 
 			  
 			   > sudo hostnamectl set-hostname NEW_HOSTNAME
 			And here is my new username
-				![My renaming success](/assets/images/renaming.JPG)
+				![My renaming success](assets/images/renaming.JPG)
