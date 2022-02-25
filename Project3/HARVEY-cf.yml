@@ -34,7 +34,7 @@ Resources:
         - Key: Application
           Value: !Ref 'AWS::StackId'
         - Key: Name
-          Value: HARVEYcf-VPC
+          Value: HARVEY-cf-VPC
   Subnet:
     Type: 'AWS::EC2::Subnet'
     Properties:
@@ -43,17 +43,22 @@ Resources:
       Tags:
         - Key: Application
           Value: !Ref 'AWS::StackId'
+        - Key: Name
+          Value: HARVEY-cf-Subnet  
   InternetGateway:
     Type: 'AWS::EC2::InternetGateway'
     Properties:
       Tags:
         - Key: Application
           Value: !Ref 'AWS::StackId'
+        - Key: Name
+          Value: HARVEY-cf-gateway  
   AttachGateway:
     Type: 'AWS::EC2::VPCGatewayAttachment'
     Properties:
       VpcId: !Ref VPC
       InternetGatewayId: !Ref InternetGateway
+      
   RouteTable:
     Type: 'AWS::EC2::RouteTable'
     Properties:
@@ -61,6 +66,8 @@ Resources:
       Tags:
         - Key: Application
           Value: !Ref 'AWS::StackId'
+        - Key: Name
+          Value: HARVEY-cf-RouteTable  
   Route:
     Type: 'AWS::EC2::Route'
     DependsOn: AttachGateway
@@ -130,7 +137,7 @@ Resources:
           DeviceIndex: '0'
           DeleteOnTermination: 'true'
           SubnetId: !Ref Subnet
-          PrivateIpAddress: 10.0.0.25
+         # PrivateIpAddress: 10.0.0.25 Commented out to see if not choosing an IP address lets it run
       UserData:
         Fn::Base64:
           !Sub |
